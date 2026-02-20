@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artigos Educativos | Economia Laranja</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-black text-white font-sans">
+    <nav class="p-6 border-b border-gray-900">
+        <a href="index.html" class="text-orange-600 font-black text-xl italic">ECONOMIA LARANJA</a>
+    </nav>
+    <section class="max-w-6xl mx-auto py-20 px-10">
+        <h2 class="text-4xl font-black mb-12 border-l-4 border-orange-600 pl-4">BIBLIOTECA DE CONHECIMENTO</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+            <!-- Artigo 1 -->
+            <div class="bg-zinc-900 p-8 rounded-2xl border border-gray-800">
+                <h3 class="text-2xl font-bold mb-4 text-orange-500">Como organizar o salário ganhando pouco</h3>
+                <p class="text-gray-400 mb-6 italic">Por Jeovane Monteiro Miguel</p>
+                <p class="text-gray-300">Aprenda a regra do 50-30-20 e como a disciplina financeira pode mudar o seu futuro mesmo com poucos recursos.</p>
+            </div>
+            <!-- Artigo 2 -->
+            <div class="bg-zinc-900 p-8 rounded-2xl border border-gray-800">
+                <h3 class="text-2xl font-bold mb-4 text-orange-500">Erros financeiros que travam o seu progresso</h3>
+                <p class="text-gray-400 mb-6 italic">Por Jeovane Monteiro Miguel</p>
+                <p class="text-gray-300">Descubra os pequenos hábitos que fazem o seu dinheiro sumir antes do fim do mês.</p>
+            </div>
+        </div>
+    </section>
+</body>
+  </html>
