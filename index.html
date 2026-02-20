@@ -9,121 +9,183 @@
     <style>
         body { font-family: 'Inter', sans-serif; background-color: #0a0a0a; color: white; scroll-behavior: smooth; }
         .bg-hero {
-            background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), 
+            background: linear-gradient(rgba(0,0,0,0.88), rgba(0,0,0,0.88)), 
                         url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070&auto=format&fit=crop');
             background-size: cover; background-position: center;
         }
-        .orange-glow { box-shadow: 0 0 20px rgba(255, 85, 0, 0.2); }
+        .orange-glow { box-shadow: 0 0 50px rgba(255, 85, 0, 0.12); }
+        input::-webkit-inner-spin-button, select { -webkit-appearance: none; appearance: none; }
+        .card-glass { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(15px); border: 1px solid rgba(255,255,255,0.08); transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); height: 100%; display: flex; flex-direction: column; justify-content: space-between; }
+        .card-glass:hover { border-color: rgba(255, 106, 0, 0.5); transform: translateY(-8px); box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
+        .btn-elite { transition: all 0.3s ease; text-transform: uppercase; font-weight: 900; letter-spacing: 2px; font-size: 10px; }
     </style>
 </head>
 <body>
 
     <!-- HERO SECTION -->
-    <header class="bg-hero min-h-screen flex flex-col justify-center px-10 md:px-24">
-        <div class="max-w-4xl">
-            <span class="bg-orange-600 text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-widest">
+    <header class="bg-hero min-h-screen flex flex-col justify-center px-6 md:px-24">
+        <div class="max-w-5xl">
+            <span class="bg-orange-600 text-white text-[10px] font-black px-4 py-1.5 rounded-full uppercase tracking-[4px] mb-8 inline-block animate-pulse">
                 ● Educação de Elite • Angola & Diáspora
             </span>
-            <h1 class="text-6xl md:text-8xl font-black mt-8 leading-tight">
-                Estratégia para <br> <span class="text-orange-600 font-black">o teu sucesso.</span>
+            <h1 class="text-6xl md:text-9xl font-black leading-tight uppercase tracking-tighter">
+                Estratégia para <br> <span class="text-orange-600">o teu sucesso.</span>
             </h1>
-            <p class="text-xl text-gray-400 mt-6 max-w-2xl italic">
-                Domina o teu salário e constrói um futuro sólido com a orientação de 
-                <span class="text-white border-b-2 border-orange-600 font-bold">Jeovane Monteiro Miguel.</span>
+            <p class="text-xl md:text-2xl text-gray-400 mt-8 max-w-2xl italic leading-relaxed">
+                Domina o teu salário e constrói um futuro sólido com a orientação estratégica de 
+                <span class="text-white border-b-2 border-orange-600 font-bold italic">Jeovane Monteiro Miguel.</span>
             </p>
 
-            <div class="flex flex-wrap gap-4 mt-12">
-                <a href="#calculadora" class="bg-orange-600 hover:bg-orange-700 text-white font-bold py-4 px-10 rounded-lg transition-all transform hover:scale-105">
-                    SALÁRIO SIMULAR
+            <div class="flex flex-wrap gap-6 mt-14">
+                <a href="#ferramentas" class="bg-orange-600 hover:bg-orange-700 text-white py-5 px-12 rounded-2xl transition-all shadow-xl shadow-orange-900/40 btn-elite">
+                    Aceder às Ferramentas
                 </a>
-                <!-- LINK CORRIGIDO PARA ARTIGOS -->
-                <a href="artigos.html" class="border border-gray-600 hover:bg-white hover:text-black text-white font-bold py-4 px-10 rounded-lg transition-all">
-                    EXPLORAR GUIAS
+                <a href="artigos.html" class="border border-gray-700 hover:bg-white hover:text-black text-white py-5 px-12 rounded-2xl transition-all btn-elite">
+                    Explorar Guias
                 </a>
-            </div>
-
-            <div class="grid grid-cols-2 gap-10 mt-20 border-t border-gray-800 pt-10">
-                <div>
-                    <p class="text-orange-600 font-bold uppercase text-xs tracking-widest">Mentoria Especializada</p>
-                    <p class="text-lg font-light text-gray-300">Jeovane Miguel</p>
-                </div>
-                <div>
-                    <p class="text-orange-600 font-bold uppercase text-xs tracking-widest">Impacto Regional</p>
-                    <p class="text-lg font-light text-gray-300">Angola e Diáspora</p>
-                </div>
             </div>
         </div>
     </header>
 
-    <!-- CALCULADORA -->
-    <section id="calculadora" class="py-24 px-10 bg-zinc-900">
-        <div class="max-w-4xl mx-auto text-center">
-            <h2 class="text-4xl font-bold mb-4">Calculadora de Rendas <span class="text-orange-600 text-5xl">50-30-20</span></h2>
-            <p class="text-gray-400 mb-10 italic">Dica: Digite o valor sem pontos (Ex: 200000)</p>
+    <!-- SECÇÃO DE FERRAMENTAS (GRID 2x2) -->
+    <section id="ferramentas" class="py-32 px-6 bg-zinc-950">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-center text-gray-500 font-black text-[10px] uppercase tracking-[10px] mb-24 text-orange-600">Ecossistema de Inteligência Financeira</h2>
             
-            <div class="bg-black p-8 rounded-3xl orange-glow border border-orange-900/30 text-left">
-                <label class="block text-sm font-bold text-gray-400 mb-2 uppercase tracking-widest">Salário Mensal (Kz / € / $)</label>
-                <input type="number" id="salarioInput" placeholder="Ex: 200000" 
-                    class="w-full bg-zinc-800 border-none p-5 rounded-xl text-3xl font-bold text-orange-500 focus:ring-2 focus:ring-orange-600 outline-none">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
                 
-                <button onclick="calcularRenda()" class="w-full mt-6 bg-orange-600 text-white font-black py-5 rounded-xl hover:bg-orange-700 transition uppercase tracking-widest">
-                    CALCULAR DIVISÃO
-                </button>
-
-                <div id="resultado" class="mt-10 grid grid-cols-1 md:grid-cols-3 gap-6 hidden">
-                    <div class="p-6 bg-zinc-800 rounded-xl border-l-4 border-orange-600">
-                        <p class="text-xs text-orange-500 font-bold uppercase">Essencial (50%)</p>
-                        <p id="res-essencial" class="text-2xl font-black mt-2 text-white"></p>
+                <!-- 1. DIVISÃO 50-30-20 -->
+                <div class="card-glass p-10 rounded-[45px]">
+                    <div>
+                        <h3 class="text-2xl font-black mb-2 text-orange-600 uppercase tracking-tighter">Gestão 50-30-20</h3>
+                        <p class="text-gray-500 text-[10px] mb-10 uppercase font-bold tracking-widest italic">Organização de Rendimentos</p>
+                        
+                        <input type="number" id="salarioInput" placeholder="Salário Mensal Líquido" 
+                            class="w-full bg-black/40 border border-white/5 p-5 rounded-2xl text-xl font-bold text-orange-500 focus:border-orange-600 outline-none mb-6">
+                        
+                        <button onclick="calcularRenda()" class="w-full bg-orange-600 text-white py-5 rounded-2xl hover:bg-orange-700 btn-elite">
+                            Simular Divisão
+                        </button>
                     </div>
-                    <div class="p-6 bg-zinc-800 rounded-xl">
-                        <p class="text-xs text-gray-400 font-bold uppercase">Lazer (30%)</p>
-                        <p id="res-lazer" class="text-2xl font-black mt-2 text-white"></p>
-                    </div>
-                    <div class="p-6 bg-zinc-800 rounded-xl border border-orange-900">
-                        <p class="text-xs text-orange-600 font-bold uppercase">Investimento (20%)</p>
-                        <p id="res-invest" class="text-2xl font-black mt-2 text-white"></p>
+                    <div id="resultado" class="mt-8 space-y-3 hidden">
+                        <div class="p-4 bg-black/40 rounded-xl flex justify-between border-l-4 border-orange-600"><span class="text-[9px] font-bold text-gray-500 uppercase">Essencial</span><span id="res-essencial" class="font-black text-white"></span></div>
+                        <div class="p-4 bg-black/40 rounded-xl flex justify-between border-l-4 border-gray-700"><span class="text-[9px] font-bold text-gray-500 uppercase">Lazer</span><span id="res-lazer" class="font-black text-white"></span></div>
+                        <div class="p-4 bg-black/40 rounded-xl flex justify-between border-l-4 border-green-600"><span class="text-[9px] font-bold text-gray-500 uppercase">Investimento</span><span id="res-invest" class="font-black text-white"></span></div>
                     </div>
                 </div>
+
+                <!-- 2. FUNDO DE SEGURANÇA -->
+                <div class="card-glass p-10 rounded-[45px]">
+                    <div>
+                        <h3 class="text-2xl font-black mb-2 text-orange-600 uppercase tracking-tighter">Fundo de Reserva</h3>
+                        <p class="text-gray-500 text-[10px] mb-10 uppercase font-bold tracking-widest italic">Segurança para a Família</p>
+                        
+                        <input type="number" id="despesas" placeholder="Custo de Vida Mensal" class="w-full bg-black/40 border border-white/5 p-5 rounded-2xl text-lg font-bold text-white outline-none mb-4 focus:border-orange-600">
+                        <input type="number" id="meses" placeholder="Meses de Cobertura" class="w-full bg-black/40 border border-white/5 p-5 rounded-2xl text-lg font-bold text-white outline-none mb-6 focus:border-orange-600">
+
+                        <button onclick="calcularReserva()" class="w-full bg-white text-black py-5 rounded-2xl hover:bg-orange-600 hover:text-white btn-elite">
+                            Calcular Reserva
+                        </button>
+                    </div>
+                    <div id="resultadoReservaBox" class="mt-8 p-8 bg-orange-600 rounded-[30px] hidden">
+                        <div id="resultadoReserva" class="text-white text-sm leading-relaxed"></div>
+                    </div>
+                </div>
+
+                <!-- 3. CONVERSOR DE MOEDAS -->
+                <div class="card-glass p-10 rounded-[45px]">
+                    <div>
+                        <h3 class="text-2xl font-black mb-2 text-orange-600 uppercase tracking-tighter">Conversor Global</h3>
+                        <p class="text-gray-500 text-[10px] mb-10 uppercase font-bold tracking-widest italic">Câmbio de Elite</p>
+                        <input type="number" id="valorMoeda" placeholder="Valor" class="w-full bg-black/40 border border-white/5 p-5 rounded-2xl text-lg font-bold text-white outline-none mb-4 focus:border-orange-600">
+                        <div class="grid grid-cols-2 gap-3 mb-6">
+                            <select id="moedaOrigem" class="bg-zinc-800 p-4 rounded-xl text-[10px] font-black text-gray-300 uppercase"><option value="KZ text-black">KZ</option><option value="USD">USD</option><option value="EUR">EUR</option><option value="BRL">BRL</option></select>
+                            <select id="moedaDestino" class="bg-zinc-800 p-4 rounded-xl text-[10px] font-black text-orange-500 uppercase"><option value="USD">USD</option><option value="KZ">KZ</option><option value="EUR">EUR</option><option value="BRL">BRL</option></select>
+                        </div>
+                        <button onclick="converterMoeda()" class="w-full bg-zinc-100 text-black py-5 rounded-2xl hover:bg-orange-600 hover:text-white btn-elite">Converter Agora</button>
+                    </div>
+                    <div id="boxMoeda" class="mt-8 p-6 bg-zinc-900 rounded-[30px] border border-orange-600/30 hidden text-center"><p id="resultadoMoeda" class="text-white font-bold text-sm italic"></p></div>
+                </div>
+
+                <!-- 4. SIMULADOR DE NEGÓCIO (VERSÃO FINAL JEOVANE) -->
+                <div class="card-glass p-10 rounded-[45px] orange-glow border-orange-600/20">
+                    <div>
+                        <h3 class="text-2xl font-black mb-2 text-orange-600 uppercase tracking-tighter">Simulador ROI & Milhão</h3>
+                        <p class="text-gray-500 text-[10px] mb-10 uppercase font-bold tracking-widest italic">Estratégia de Crescimento</p>
+                        
+                        <input type="number" id="capital" placeholder="Capital Inicial" class="w-full bg-black/40 border border-white/5 p-4 rounded-xl text-lg font-bold text-white outline-none mb-3 focus:border-orange-600">
+                        <input type="number" id="lucroMensal" placeholder="Lucro Mensal Bruto" class="w-full bg-black/40 border border-white/5 p-4 rounded-xl text-lg font-bold text-white outline-none mb-3 focus:border-orange-600">
+                        <input type="number" id="despesasNegocio" placeholder="Despesas Operacionais" class="w-full bg-black/40 border border-white/5 p-4 rounded-xl text-lg font-bold text-white outline-none mb-6 focus:border-orange-600">
+
+                        <button onclick="simularNegocio()" class="w-full bg-orange-600 text-white py-5 rounded-2xl hover:bg-orange-700 btn-elite">
+                            Simular Potencial
+                        </button>
+                    </div>
+                    <div id="boxNegocio" class="mt-8 p-8 bg-zinc-900 rounded-[30px] border border-orange-600/40 hidden">
+                        <div id="resultadoNegocio" class="text-white text-xs leading-loose"></div>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
 
-    <!-- CONTEÚDO -->
-    <section class="py-24 px-10 max-w-7xl mx-auto">
-        <h3 class="text-3xl font-bold mb-12 border-l-4 border-orange-600 pl-4 uppercase tracking-tighter">Conhecimento de Valor</h3>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div class="bg-zinc-900 p-10 rounded-3xl hover:border-orange-600 border border-transparent transition duration-500">
-                <h4 class="text-xl font-bold mb-4 text-white uppercase">Educação Financeira</h4>
-                <p class="text-gray-400 text-sm italic mb-6 leading-relaxed">"Não é sobre quanto ganhas, é sobre como geres." — Jeovane Miguel</p>
-                <a href="artigos.html" class="text-orange-500 font-bold uppercase text-xs tracking-widest hover:underline">Ler Artigo →</a>
-            </div>
+    <!-- FOOTER -->
+    <footer class="py-32 px-6 border-t border-white/5 text-center bg-black leading-loose">
+        <div class="flex flex-wrap justify-center gap-12 mb-16 text-[10px] font-black uppercase tracking-[4px] text-gray-500">
+            <a href="sobre.html" class="hover:text-orange-500">Autor Oficial</a>
+            <a href="artigos.html" class="hover:text-orange-500">Artigos de Elite</a>
+            <a href="contato.html" class="hover:text-orange-500">Canal Direto</a>
+            <a href="privacidade.html" class="hover:text-orange-500 text-[8px]">Privacidade</a>
         </div>
-    </section>
-
-    <!-- FOOTER COM TODOS OS LINKS -->
-    <footer class="py-20 px-10 border-t border-gray-900 text-center">
-        <div class="flex flex-wrap justify-center gap-8 mb-10 text-sm font-bold uppercase tracking-widest">
-            <a href="sobre.html" class="hover:text-orange-500 transition">Sobre o Autor</a>
-            <a href="artigos.html" class="hover:text-orange-500 transition">Artigos</a>
-            <a href="contato.html" class="hover:text-orange-500 transition">Contato</a>
-        </div>
-        <p class="text-gray-600 text-xs">© 2026 Economia Laranja. Criado por Jeovane Monteiro Miguel.</p>
+        <p class="text-gray-800 text-[9px] uppercase tracking-[8px] font-black italic">© 2026 Economia Laranja. Criado e mantido por Jeovane Monteiro Miguel.</p>
     </footer>
 
     <script>
         function calcularRenda() {
-            const salario = document.getElementById('salarioInput').value;
-            if (salario > 0) {
-                document.getElementById('resultado').classList.remove('hidden');
-                document.getElementById('res-essencial').innerText = (salario * 0.5).toLocaleString() + " -";
-                document.getElementById('res-lazer').innerText = (salario * 0.3).toLocaleString() + " -";
-                document.getElementById('res-invest').innerText = (salario * 0.2).toLocaleString() + " -";
-                // Rola para o resultado suavemente
-                window.scrollTo({ top: document.getElementById('resultado').offsetTop - 100, behavior: 'smooth' });
-            } else {
-                alert("Por favor, insira um valor válido.");
-            }
+            const s = document.getElementById('salarioInput').value;
+            if (s > 0) { document.getElementById('resultado').classList.remove('hidden'); document.getElementById('res-essencial').innerText = (s*0.5).toLocaleString() + " -"; document.getElementById('res-lazer').innerText = (s*0.3).toLocaleString() + " -"; document.getElementById('res-invest').innerText = (s*0.2).toLocaleString() + " -"; }
+        }
+
+        function calcularReserva() {
+            const d = document.getElementById("despesas").value, m = document.getElementById("meses").value;
+            if (d && m) { const t = d * m, p = t / 6; document.getElementById("resultadoReservaBox").classList.remove('hidden'); document.getElementById("resultadoReserva").innerHTML = `<span class='uppercase text-[10px] font-black opacity-70 tracking-widest'>Reserva Total:</span><br><span class='text-3xl font-black text-white'>${t.toLocaleString()} -</span><br><br><span class='uppercase text-[10px] font-black opacity-70 italic tracking-widest'>Plano Mensal (6 Meses):</span><br><span class='text-xl font-bold'>${p.toLocaleString()} / mês</span>`; }
+        }
+
+        function converterMoeda() {
+          var valor = parseFloat(document.getElementById("valorMoeda").value);
+          var origem = document.getElementById("moedaOrigem").value, para = document.getElementById("moedaDestino").value;
+          if (isNaN(valor)) return;
+          var taxas = { KZ: 1, USD: 850, EUR: 920, BRL: 170 };
+          var convertido = (valor * taxas[origem]) / taxas[para];
+          document.getElementById("boxMoeda").classList.remove('hidden');
+          document.getElementById("resultadoMoeda").innerHTML = "Valor convertido: <br><strong class='text-orange-500 text-2xl uppercase'>" + convertido.toFixed(2) + " " + para + "</strong>";
+        }
+
+        function simularNegocio() {
+          var cap = parseFloat(document.getElementById("capital").value);
+          var lucM = parseFloat(document.getElementById("lucroMensal").value);
+          var des = parseFloat(document.getElementById("despesasNegocio").value);
+
+          if (isNaN(cap) || isNaN(lucM) || isNaN(des)) { alert("Preencha todos os campos corretamente."); return; }
+
+          var lucL = lucM - des;
+          if (lucL <= 0) {
+              document.getElementById("boxNegocio").classList.remove('hidden');
+              document.getElementById("resultadoNegocio").innerHTML = "<span class='text-red-500 font-black uppercase tracking-widest'>Atenção: O negócio apresenta prejuízo operacional.</span>";
+              return;
+          }
+
+          var mMilhao = 1000000 / lucL;
+          var roi = (lucL / cap) * 100;
+
+          document.getElementById("boxNegocio").classList.remove('hidden');
+          document.getElementById("resultadoNegocio").innerHTML = 
+            `<span class='text-orange-600 uppercase tracking-widest text-[10px] font-black'>Lucro Líquido:</span><br><span class='text-xl font-black'>${lucL.toLocaleString()} -</span><br><br>` +
+            `<span class='text-orange-600 uppercase tracking-widest text-[10px] font-black'>Retorno (ROI):</span><br><span class='text-xl font-black'>${roi.toFixed(2)}% ao mês</span><br><br>` +
+            `<span class='text-white uppercase tracking-widest text-[10px] font-black border-b border-orange-600'>Tempo para o 1.000.000:</span><br><span class='text-2xl font-black text-orange-500'>${mMilhao.toFixed(1)} Meses</span>` +
+            `<p class='mt-6 text-[8px] text-gray-600 uppercase tracking-widest'>Cálculo Estratégico Jeovane Miguel</p>`;
         }
     </script>
 </body>
-    </html>
+                </html>
