@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plano de Poupança | Jeovane Monteiro Miguel</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600;900&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body { font-family: 'Poppins', sans-serif; background: linear-gradient(to right, #0a0a0a, #1a1a1a); color: white; }
+        .card-glass { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(15px); border: 1px solid rgba(255,255,255,0.08); }
+        input::-webkit-inner-spin-button { -webkit-appearance: none; }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col">
+    <nav class="p-6 border-b border-white/5 flex justify-between items-center px-6 md:px-24 font-black uppercase tracking-tighter italic text-left">
+        <a href="index.html" class="text-orange-600 text-xl">Economia Laranja</a>
+        <a href="index.html" class="text-gray-500 text-[10px] tracking-[3px]">← Voltar</a>
+    </nav>
+
+    <section class="flex-grow flex items-center justify-center px-6 py-20 text-left text-left">
+        <div class="max-w-2xl w-full">
+            <h1 class="text-4xl md:text-6xl font-black uppercase text-center mb-10 tracking-tighter">Plano de <span class="text-orange-600">Poupança</span></h1>
+            
+            <div class="card-glass p-10 rounded-[45px]">
+                <div class="space-y-6">
+                    <div>
+                        <label class="text-[10px] font-black text-gray-500 uppercase tracking-widest block mb-2 italic">Meta Desejada</label>
+                        <input type="number" id="metaValor" placeholder="Ex: 1000000" class="w-full bg-black/40 border border-white/5 p-5 rounded-2xl text-xl font-bold text-white outline-none focus:border-orange-600">
+                    </div>
+                    <div>
+                        <label class="text-[10px] font-black text-gray-500 uppercase tracking-widest block mb-2 italic">Prazo (Meses)</label>
+                        <input type="number" id="metaMeses" placeholder="Ex: 12" class="w-full bg-black/40 border border-white/5 p-5 rounded-2xl text-xl font-bold text-orange-500 outline-none focus:border-orange-600">
+                    </div>
+                    <button onclick="calcularMeta()" class="w-full bg-orange-600 text-white font-black py-5 rounded-2xl uppercase text-[10px] tracking-[3px] hover:bg-orange-700 transition">Calcular Plano</button>
+                </div>
+
+                <div id="resultadoBox" class="mt-10 p-8 bg-zinc-900 rounded-[30px] border border-orange-600/30 hidden text-left text-left">
+                    <p id="resultadoMeta" class="text-white text-lg font-light italic leading-relaxed"></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        function calcularMeta() {
+            const v = parseFloat(document.getElementById("metaValor").value);
+            const m = parseFloat(document.getElementById("metaMeses").value);
+            if (v && m) {
+                const mensal = v / m;
+                document.getElementById("resultadoBox").classList.remove('hidden');
+                document.getElementById("resultadoMeta").innerHTML = `Para atingir <span class='text-orange-600 font-bold'>${v.toLocaleString()} -</span> em ${m} meses, deves guardar:<br><span class='text-3xl font-black text-white'>${mensal.toLocaleString(undefined, {minimumFractionDigits: 2})} /mês</span>`;
+            }
+        }
+    </script>
+</body>
+</html>
