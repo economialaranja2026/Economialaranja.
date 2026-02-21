@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Juros Compostos | Jeovane Miguel</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-black text-white p-10 font-sans">
+    <div class="max-w-xl mx-auto bg-zinc-900 p-10 rounded-[40px] border border-orange-600/20">
+        <h2 class="text-3xl font-black text-orange-600 mb-6 uppercase">Simulador de Juros Compostos</h2>
+        <div class="space-y-4">
+            <input type="number" id="capitalInicial" placeholder="Capital Inicial" class="w-full p-4 bg-black rounded-xl outline-none border border-white/5">
+            <input type="number" id="aporteMensal" placeholder="Aporte Mensal" class="w-full p-4 bg-black rounded-xl outline-none border border-white/5">
+            <input type="number" id="taxaAnual" placeholder="Taxa de Juro Anual (%)" class="w-full p-4 bg-black rounded-xl outline-none border border-white/5">
+            <input type="number" id="anos" placeholder="Tempo (Anos)" class="w-full p-4 bg-black rounded-xl outline-none border border-white/5">
+            <button onclick="calcularJuros()" class="w-full bg-orange-600 py-4 rounded-xl font-black uppercase">Simular Crescimento</button>
+        </div>
+        <div id="resJuros" class="mt-8 p-6 bg-black rounded-2xl hidden text-xl font-bold border border-orange-600/50"></div>
+    </div>
+
+    <script>
+        function calcularJuros() {
+            let p = parseFloat(document.getElementById('capitalInicial').value);
+            let pM = parseFloat(document.getElementById('aporteMensal').value);
+            let r = parseFloat(document.getElementById('taxaAnual').value) / 100 / 12;
+            let n = parseFloat(document.getElementById('anos').value) * 12;
+
+            let total = p * Math.pow(1 + r, n) + pM * ((Math.pow(1 + r, n) - 1) / r);
+            
+            document.getElementById('resJuros').classList.remove('hidden');
+            document.getElementById('resJuros').innerHTML = "Total após o período:<br><span class='text-orange-500 text-3xl'>" + total.toLocaleString(undefined, {minimumFractionDigits: 2}) + " -</span>";
+        }
+    </script>
+</body>
+  </html>
