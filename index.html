@@ -131,17 +131,20 @@
         </div>
     </section>
 
-    <!-- FOOTER -->
+    <!-- RODAPÉ UNIFICADO E SCRIPTS - COLA A PARTIR DA LINHA 134 -->
     <footer class="py-24 px-6 border-t border-white/5 text-center bg-black leading-loose">
-        <div class="flex flex-wrap justify-center gap-10 mb-16 text-[10px] font-black uppercase tracking-[4px] text-gray-500">
+        <div class="flex flex-wrap justify-center gap-8 md:gap-12 mb-16 text-[10px] font-black uppercase tracking-[3px] text-gray-500">
             <a href="sobre.html" class="hover:text-orange-500 transition">Autor Oficial</a>
-            <a href="faculdade.html" class="hover:text-orange-500 transition text-orange-600 italic">Faculdade Laranja</a>
-            <a href="artigos.html" class="hover:text-orange-500 transition">Artigos</a>
-            <a href="poupanca.html" class="hover:text-orange-500 transition">Poupança</a>
+            <a href="faculdade.html" class="hover:text-orange-500 transition text-orange-600">Faculdade Laranja</a>
+            <a href="pilares.html" class="hover:text-orange-500 transition border-b border-orange-600/30">Poupança vs Investimento</a>
+            <a href="glossario.html" class="hover:text-orange-500 transition">Glossário</a>
+            <a href="juros.html" class="hover:text-orange-500 transition">Juros Compostos</a>
+            <a href="artigos.html" class="hover:text-orange-500 transition font-bold">Artigos</a>
+            <a href="poupanca.html" class="hover:text-orange-500 transition">Metas</a>
             <a href="credito.html" class="hover:text-orange-500 transition">Crédito</a>
-            <a href="contato.html" class="hover:text-orange-500 transition">Contato</a>
+            <a href="contato.html" class="hover:text-orange-500 transition font-bold">Contato</a>
         </div>
-        <p class="text-gray-800 text-[9px] uppercase tracking-[8px] font-black italic">© 2026 Economia Laranja. Criado por Jeovane Monteiro Miguel.</p>
+        <p class="text-gray-800 text-[9px] uppercase tracking-[8px] font-black italic">© 2026 Economia Laranja. Criado e mantido por Jeovane Monteiro Miguel.</p>
     </footer>
 
     <script>
@@ -161,7 +164,7 @@
             if (d && m) {
                 const t = d * m, p = t / 6;
                 document.getElementById("resultadoReservaBox").classList.remove('hidden');
-                document.getElementById("resultadoReserva").innerHTML = `TOTAL: <span class='text-white font-bold'>${t.toLocaleString()} -</span><br>PLANO 6 MESES: <span class='text-white font-bold'>${p.toLocaleString()} /mês</span>`;
+                document.getElementById("resultadoReserva").innerHTML = `<span class='uppercase text-[10px] font-black opacity-70'>Reserva Total:</span><br><span class='text-3xl font-black'>${t.toLocaleString()} -</span><br><br><span class='uppercase text-[10px] font-black opacity-70 italic'>Plano 6 Meses:</span><br><span class='text-xl font-bold'>${p.toLocaleString()} / mês</span>`;
             }
         }
 
@@ -172,7 +175,7 @@
             var t = { KZ: 1, USD: 850, EUR: 920, BRL: 170 };
             var r = (v * t[o]) / t[d];
             document.getElementById("boxMoeda").classList.remove('hidden');
-            document.getElementById("resultadoMoeda").innerHTML = "CONVERTIDO: " + r.toFixed(2).toLocaleString() + " " + d;
+            document.getElementById("resultadoMoeda").innerHTML = "Valor convertido: <br><strong class='text-orange-500 text-2xl uppercase'>" + r.toFixed(2) + " " + d + "</strong>";
         }
 
         function simularNegocio() {
@@ -183,12 +186,12 @@
             var lucL = lucM - des;
             if (lucL <= 0) {
                 document.getElementById("boxNegocio").classList.remove('hidden');
-                document.getElementById("resultadoNegocio").innerHTML = "NEGÓCIO INVIÁVEL";
+                document.getElementById("resultadoNegocio").innerHTML = "<span class='text-red-500 font-black uppercase tracking-widest text-[9px]'>Prejuízo operacional detectado.</span>";
                 return;
             }
             var mMilhao = 1000000 / lucL, roi = (lucL / cap) * 100;
             document.getElementById("boxNegocio").classList.remove('hidden');
-            document.getElementById("resultadoNegocio").innerHTML = `LUCRO LÍQUIDO: ${lucL.toLocaleString()} -<br>ROI: ${roi.toFixed(2)}% /mês<br>ATÉ O MILHÃO: ${mMilhao.toFixed(1)} Meses`;
+            document.getElementById("resultadoNegocio").innerHTML = `<span class='text-orange-600 uppercase tracking-widest text-[10px] font-black'>Lucro Líquido:</span><br><span class='text-xl font-black'>${lucL.toLocaleString()} -</span><br><br><span class='text-orange-600 uppercase tracking-widest text-[10px] font-black'>ROI:</span><br><span class='text-xl font-black'>${roi.toFixed(2)}% ao mês</span><br><br><span class='text-white uppercase tracking-widest text-[10px] font-black border-b border-orange-600'>Tempo para o 1.000.000:</span><br><span class='text-2xl font-black text-orange-500'>${mMilhao.toFixed(1)} Meses</span>`;
         }
 
         if ('serviceWorker' in navigator) {
@@ -196,4 +199,4 @@
         }
     </script>
 </body>
-</html>
+    </html>
