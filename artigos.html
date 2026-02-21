@@ -3,29 +3,106 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Artigos Educativos | Economia Laranja</title>
+    <title>Artigos de Elite | Jeovane Monteiro Miguel</title>
+
+    <!-- FONTES E PWA -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600;900&display=swap" rel="stylesheet">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#ff6a00">
     <script src="https://cdn.tailwindcss.com"></script>
+    
+    <style>
+        body { 
+            font-family: 'Poppins', sans-serif; 
+            background: linear-gradient(to right, #0a0a0a, #1a1a1a); 
+            color: white; 
+            scroll-behavior: smooth;
+        }
+        .article-card { 
+            background: rgba(255, 255, 255, 0.03); 
+            border: 1px solid rgba(255,255,255,0.08); 
+            transition: all 0.4s ease;
+        }
+        .article-card:hover { border-color: #ff6a00; transform: translateY(-5px); }
+        h2 { border-left: 5px solid #ff6a00; padding-left: 15px; }
+        .text-gradient { background: linear-gradient(to bottom, #fff, #888); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    </style>
 </head>
-<body class="bg-black text-white font-sans">
-    <nav class="p-6 border-b border-gray-900">
-        <a href="index.html" class="text-orange-600 font-black text-xl italic">ECONOMIA LARANJA</a>
+<body>
+
+    <!-- NAV -->
+    <nav class="p-6 border-b border-white/5 flex justify-between items-center px-6 md:px-24">
+        <a href="index.html" class="text-orange-600 font-black text-xl italic uppercase tracking-tighter">Economia Laranja</a>
+        <a href="index.html" class="text-gray-500 hover:text-white text-[10px] font-black uppercase tracking-[3px] transition">← Início</a>
     </nav>
-    <section class="max-w-6xl mx-auto py-20 px-10">
-        <h2 class="text-4xl font-black mb-12 border-l-4 border-orange-600 pl-4">BIBLIOTECA DE CONHECIMENTO</h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
-            <!-- Artigo 1 -->
-            <div class="bg-zinc-900 p-8 rounded-2xl border border-gray-800">
-                <h3 class="text-2xl font-bold mb-4 text-orange-500">Como organizar o salário ganhando pouco</h3>
-                <p class="text-gray-400 mb-6 italic">Por Jeovane Monteiro Miguel</p>
-                <p class="text-gray-300">Aprenda a regra do 50-30-20 e como a disciplina financeira pode mudar o seu futuro mesmo com poucos recursos.</p>
+
+    <!-- HEADER DA PÁGINA -->
+    <header class="py-20 px-6 text-center">
+        <span class="bg-orange-600 text-white text-[9px] font-black px-4 py-1 rounded-full uppercase tracking-[4px] mb-4 inline-block">Conhecimento Estratégico</span>
+        <h1 class="text-5xl md:text-7xl font-black uppercase tracking-tighter">Biblioteca de <span class="text-orange-600 italic">Valor</span></h1>
+        <p class="text-gray-400 mt-4 italic font-light max-w-2xl mx-auto">Artigos exclusivos escritos por Jeovane Monteiro Miguel para transformar a tua realidade financeira.</p>
+    </header>
+
+    <!-- LISTA DE ARTIGOS -->
+    <main class="max-w-6xl mx-auto px-6 pb-32 space-y-20">
+
+        <!-- ARTIGO 1 -->
+        <article class="article-card p-10 rounded-[40px]">
+            <span class="text-orange-500 font-black text-[10px] uppercase tracking-widest">Guia Prático</span>
+            <h2 class="text-2xl md:text-3xl font-black mt-4 mb-6 uppercase">Como organizar o salário mensal mesmo ganhando pouco</h2>
+            <div class="text-gray-400 leading-relaxed space-y-4 font-light italic">
+                <p>Organizar o salário não depende de ganhar muito, mas de saber usar bem o que se ganha. O primeiro passo, defendido por Jeovane Miguel, é conhecer exatamente quanto entra e quanto sai todos os meses.</p>
+                <p>Anotar despesas ajuda a perceber onde o dinheiro está a fugir. Separa o teu dinheiro por prioridades: alimentação, transporte, contas fixas e, por fim, a poupança. Mesmo valores pequenos poupados com consistência criam a base da tua futura riqueza.</p>
             </div>
-            <!-- Artigo 2 -->
-            <div class="bg-zinc-900 p-8 rounded-2xl border border-gray-800">
-                <h3 class="text-2xl font-bold mb-4 text-orange-500">Erros financeiros que travam o seu progresso</h3>
-                <p class="text-gray-400 mb-6 italic">Por Jeovane Monteiro Miguel</p>
-                <p class="text-gray-300">Descubra os pequenos hábitos que fazem o seu dinheiro sumir antes do fim do mês.</p>
+            <p class="mt-8 text-[9px] text-gray-600 uppercase font-black tracking-widest italic border-t border-white/5 pt-4">Autor: Jeovane Monteiro Miguel</p>
+        </article>
+
+        <!-- ARTIGO 2 -->
+        <article class="article-card p-10 rounded-[40px]">
+            <span class="text-orange-500 font-black text-[10px] uppercase tracking-widest">Educação Financeira</span>
+            <h2 class="text-2xl md:text-3xl font-black mt-4 mb-6 uppercase text-left">O que é educação financeira e por que ela muda vidas?</h2>
+            <div class="text-gray-400 leading-relaxed space-y-4 font-light italic text-left">
+                <p>Educação financeira é a habilidade de lidar com o dinheiro de forma consciente. Não é apenas sobre números, é sobre comportamento. Quando entendes como o dinheiro funciona, passas a tomar decisões mais inteligentes.</p>
+                <p>Este conhecimento reduz a ansiedade, elimina dívidas desnecessárias e dá-te liberdade de escolha. Jeovane Miguel acredita que a literacia financeira é a arma mais poderosa contra a pobreza e a insegurança.</p>
             </div>
+            <p class="mt-8 text-[9px] text-gray-600 uppercase font-black tracking-widest italic border-t border-white/5 pt-4 text-left">Autor: Jeovane Monteiro Miguel</p>
+        </article>
+
+        <!-- ARTIGO 3 -->
+        <article class="article-card p-10 rounded-[40px]">
+            <span class="text-orange-500 font-black text-[10px] uppercase tracking-widest text-left">Estratégia</span>
+            <h2 class="text-2xl md:text-3xl font-black mt-4 mb-6 uppercase">Erros financeiros comuns que impedem o teu progresso</h2>
+            <div class="text-gray-400 leading-relaxed space-y-4 font-light italic text-left">
+                <p>O maior erro é gastar sem planeamento. Muitas pessoas usam o salário todo antes do fim do mês porque não controlam as pequenas despesas diárias.</p>
+                <p>Outro erro fatal é não ter uma reserva de emergência. Sem proteção, qualquer imprevisto transforma-se numa dívida. Corrigir estes erros exige disciplina, mas o resultado é uma estabilidade que não tem preço.</p>
+            </div>
+            <p class="mt-8 text-[9px] text-gray-600 uppercase font-black tracking-widest italic border-t border-white/5 pt-4 text-left">Autor: Jeovane Monteiro Miguel</p>
+        </article>
+
+        <!-- ARTIGO 4 -->
+        <article class="article-card p-10 rounded-[40px]">
+            <span class="text-orange-500 font-black text-[10px] uppercase tracking-widest text-left">Fundamentos</span>
+            <h2 class="text-2xl md:text-3xl font-black mt-4 mb-6 uppercase">A diferença real entre gastar, poupar e investir</h2>
+            <div class="text-gray-400 leading-relaxed space-y-4 font-light italic text-left">
+                <p>Gastar é trocar dinheiro por prazer ou necessidade imediata. Poupar é guardar dinheiro para o futuro ou emergências, mantendo-o seguro. Investir é colocar o dinheiro a trabalhar para gerar mais dinheiro.</p>
+                <p>Jeovane Miguel ensina que o equilíbrio entre estes três pilares é o que constrói uma vida sustentável. Não podes apenas gastar, mas também não deves apenas poupar; deves aprender a investir para vencer a inflação.</p>
+            </div>
+            <p class="mt-8 text-[9px] text-gray-600 uppercase font-black tracking-widest italic border-t border-white/5 pt-4 text-left text-left">Autor: Jeovane Monteiro Miguel</p>
+        </article>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="py-24 px-6 border-t border-white/5 text-center bg-black">
+        <div class="flex flex-wrap justify-center gap-10 mb-12 text-[10px] font-black uppercase tracking-[3px] text-gray-500">
+            <a href="sobre.html" class="hover:text-orange-500">Autor</a>
+            <a href="faculdade.html" class="hover:text-orange-500">Faculdade</a>
+            <a href="poupanca.html" class="hover:text-orange-500">Poupança</a>
+            <a href="credito.html" class="hover:text-orange-500">Crédito</a>
+            <a href="contato.html" class="hover:text-orange-500">Contato</a>
         </div>
-    </section>
+        <p class="text-gray-800 text-[8px] uppercase tracking-[8px] font-black italic">© 2026 Economia Laranja. Identidade por Jeovane Monteiro Miguel.</p>
+    </footer>
+
 </body>
-  </html>
+        </html>
