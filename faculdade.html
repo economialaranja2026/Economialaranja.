@@ -7,44 +7,109 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600;900&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        body { font-family: 'Poppins', sans-serif; background: linear-gradient(to right, #0a0a0a, #1a1a1a); color: white; }
-        .module-card { background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255,255,255,0.08); transition: all 0.3s ease; }
-        .module-card:hover { border-color: #ff6a00; transform: translateY(-5px); }
+        body { font-family: 'Poppins', sans-serif; background: linear-gradient(to right, #0a0a0a, #1a1a1a); color: white; scroll-behavior: smooth; }
+        .module-card { background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255,255,255,0.08); transition: all 0.3s ease; height: 100%; }
+        .module-card:hover { border-color: #ff6a00; transform: translateY(-5px); background: rgba(255, 106, 0, 0.02); }
         h2 { border-left: 5px solid #ff6a00; padding-left: 15px; }
+        .grid-academy { display: grid; grid-template-cols: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
     </style>
 </head>
 <body class="min-h-screen">
+
+    <!-- NAV -->
     <nav class="p-6 border-b border-white/5 flex justify-between items-center px-6 md:px-24 font-black uppercase tracking-tighter italic">
         <a href="index.html" class="text-orange-600 text-xl">Economia Laranja</a>
         <a href="index.html" class="text-gray-500 text-[10px] tracking-[3px]">← Voltar</a>
     </nav>
 
-    <header class="py-20 text-center">
-        <h1 class="text-5xl md:text-7xl font-black uppercase tracking-tighter">Faculdade <span class="text-orange-600 italic">Laranja</span></h1>
-        <p class="text-gray-400 mt-4 italic font-light">O teu roteiro estratégico para o sucesso.</p>
+    <!-- HEADER -->
+    <header class="py-20 text-center px-6">
+        <span class="bg-orange-600 text-white text-[9px] font-black px-4 py-1.5 rounded-full uppercase tracking-[4px] mb-4 inline-block">Curriculum de Alta Performance</span>
+        <h1 class="text-5xl md:text-7xl font-black uppercase tracking-tighter italic">Faculdade <span class="text-orange-600">Laranja</span></h1>
+        <p class="text-gray-400 mt-4 italic font-light max-w-2xl mx-auto">Dez níveis de conhecimento estratégico para dominares o mercado financeiro e empresarial sob a visão de Jeovane Monteiro Miguel.</p>
     </header>
 
-    <section class="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-8 pb-20">
-        <div class="module-card p-10 rounded-[40px]">
-            <span class="text-orange-600 font-black text-[10px] tracking-[3px] uppercase">Módulo 01</span>
-            <h3 class="text-2xl font-black mt-2 mb-4 uppercase">Mentalidade Financeira</h3>
-            <p class="text-gray-400 font-light italic text-left">Rico não é quem ganha muito. É quem sabe guardar e investir.</p>
-        </div>
-        <div class="module-card p-10 rounded-[40px]">
-            <span class="text-orange-600 font-black text-[10px] tracking-[3px] uppercase">Módulo 02</span>
-            <h3 class="text-2xl font-black mt-2 mb-4 uppercase text-left">Reserva de Emergência</h3>
-            <p class="text-gray-400 font-light italic text-left">Antes de investir, proteja sua família com 6 meses de despesas.</p>
-        </div>
-        <div class="module-card p-10 rounded-[40px]">
-            <span class="text-orange-600 font-black text-[10px] tracking-[3px] uppercase text-left">Módulo 03</span>
-            <h3 class="text-2xl font-black mt-2 mb-4 uppercase">Como sair das dívidas</h3>
-            <p class="text-gray-400 font-light italic text-left">Estratégia prática: Pague primeiro as dívidas com juros mais altos.</p>
-        </div>
-        <div class="module-card p-10 rounded-[40px]">
-            <span class="text-orange-600 font-black text-[10px] tracking-[3px] uppercase text-left">Módulo 04</span>
-            <h3 class="text-2xl font-black mt-2 mb-4 uppercase">Gestão de Negócio</h3>
-            <p class="text-gray-400 font-light italic text-left">Comece pequeno, valide sua ideia e escale com segurança.</p>
+    <!-- MÓDULOS -->
+    <section class="max-w-7xl mx-auto px-6 pb-32">
+        <div class="grid-academy">
+            
+            <!-- Módulo 1 -->
+            <div class="module-card p-10 rounded-[40px]">
+                <span class="text-orange-600 font-black text-[10px] uppercase tracking-[3px]">Nível 01</span>
+                <h3 class="text-xl font-black mt-2 mb-4 uppercase">Mentalidade Financeira</h3>
+                <p class="text-gray-400 font-light italic text-xs leading-relaxed text-left">O sucesso começa na mente. Rico não é quem ganha muito, mas quem desenvolve a disciplina de preservar e multiplicar o que recebe.</p>
+            </div>
+
+            <!-- Módulo 2 -->
+            <div class="module-card p-10 rounded-[40px]">
+                <span class="text-orange-600 font-black text-[10px] uppercase tracking-[3px] text-left">Nível 02</span>
+                <h3 class="text-xl font-black mt-2 mb-4 uppercase text-left">Reserva de Emergência</h3>
+                <p class="text-gray-400 font-light italic text-xs leading-relaxed text-left text-left">A base da segurança. Antes de qualquer risco, aprenda a proteger a sua família com 6 meses de despesas garantidas.</p>
+            </div>
+
+            <!-- Módulo 3 -->
+            <div class="module-card p-10 rounded-[40px]">
+                <span class="text-orange-600 font-black text-[10px] uppercase tracking-[3px] text-left">Nível 03</span>
+                <h3 class="text-xl font-black mt-2 mb-4 uppercase text-left">Estratégia de Dívidas</h3>
+                <p class="text-gray-400 font-light italic text-xs leading-relaxed text-left">Como limpar o caminho. Aprenda a priorizar o pagamento de juros altos e a renegociar créditos para recuperar a sua paz mental.</p>
+            </div>
+
+            <!-- Módulo 4 -->
+            <div class="module-card p-10 rounded-[40px]">
+                <span class="text-orange-600 font-black text-[10px] uppercase tracking-[3px] text-left">Nível 04</span>
+                <h3 class="text-xl font-black mt-2 mb-4 uppercase text-left text-left text-left">Gestão de Negócio</h3>
+                <p class="text-gray-400 font-light italic text-xs leading-relaxed text-left text-left text-left">Comece pequeno, valide rápido e escale com segurança. A metodologia para transformar uma ideia num negócio lucrativo.</p>
+            </div>
+
+            <!-- Módulo 5 (NOVO) -->
+            <div class="module-card p-10 rounded-[40px]">
+                <span class="text-orange-600 font-black text-[10px] uppercase tracking-[3px] text-left">Nível 05</span>
+                <h3 class="text-xl font-black mt-2 mb-4 uppercase text-left">Inteligência de Investimento</h3>
+                <p class="text-gray-400 font-light italic text-xs leading-relaxed text-left">Saia da poupança passiva. Conheça os ativos que geram renda real: ações, imóveis e títulos que vencem a inflação.</p>
+            </div>
+
+            <!-- Módulo 6 (NOVO) -->
+            <div class="module-card p-10 rounded-[40px]">
+                <span class="text-orange-600 font-black text-[10px] uppercase tracking-[3px] text-left">Nível 06</span>
+                <h3 class="text-xl font-black mt-2 mb-4 uppercase text-left">Economia Laranja & Criatividade</h3>
+                <p class="text-gray-400 font-light italic text-xs leading-relaxed text-left">O poder do talento. Aprenda a monetizar a cultura e a propriedade intelectual num mercado globalizado e digital.</p>
+            </div>
+
+            <!-- Módulo 7 (NOVO) -->
+            <div class="module-card p-10 rounded-[40px]">
+                <span class="text-orange-600 font-black text-[10px] uppercase tracking-[3px] text-left">Nível 07</span>
+                <h3 class="text-xl font-black mt-2 mb-4 uppercase text-left">Fiscalidade & Impostos</h3>
+                <p class="text-gray-400 font-light italic text-xs leading-relaxed text-left">Domine as regras do jogo. Entenda o impacto do IRT, IVA e planeamento fiscal para proteger legalmente o teu lucro.</p>
+            </div>
+
+            <!-- Módulo 8 (NOVO) -->
+            <div class="module-card p-10 rounded-[40px]">
+                <span class="text-orange-600 font-black text-[10px] uppercase tracking-[3px] text-left">Nível 08</span>
+                <h3 class="text-xl font-black mt-2 mb-4 uppercase text-left">Multiplicação de Riqueza</h3>
+                <p class="text-gray-400 font-light italic text-xs leading-relaxed text-left">O milagre dos juros compostos. Como criar uma "bola de neve" financeira que trabalha 24 horas por dia por ti.</p>
+            </div>
+
+            <!-- Módulo 9 (NOVO) -->
+            <div class="module-card p-10 rounded-[40px]">
+                <span class="text-orange-600 font-black text-[10px] uppercase tracking-[3px] text-left">Nível 09</span>
+                <h3 class="text-xl font-black mt-2 mb-4 uppercase text-left">Economia Digital & Futuro</h3>
+                <p class="text-gray-400 font-light italic text-xs leading-relaxed text-left">Moedas fortes e tecnologia. Prepare-se para as novas formas de gerar riqueza através de mercados globais e ativos digitais.</p>
+            </div>
+
+            <!-- Módulo 10 (NOVO) -->
+            <div class="module-card p-10 rounded-[40px]">
+                <span class="text-orange-600 font-black text-[10px] uppercase tracking-[3px] text-left">Nível 10</span>
+                <h3 class="text-xl font-black mt-2 mb-4 uppercase text-left">Liderança & Legado</h3>
+                <p class="text-gray-400 font-light italic text-xs leading-relaxed text-left">Gerir o sucesso. Como construir um património que impacte as próximas gerações da tua família e a tua comunidade.</p>
+            </div>
+
         </div>
     </section>
+
+    <!-- FOOTER -->
+    <footer class="py-20 border-t border-white/5 text-center bg-black">
+        <p class="text-gray-800 text-[9px] uppercase tracking-[8px] font-black italic">© 2026 Economia Laranja. Faculdade Estratégica por Jeovane Monteiro Miguel.</p>
+    </footer>
+
 </body>
-  </html>
+</html>
