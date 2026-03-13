@@ -5,6 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Economia Laranja | Jeovane Monteiro Miguel</title>
 
+    <!-- GOOGLE SEARCH CONSOLE (VERIFICAÇÃO DE ELITE) -->
+    <meta name="google-site-verification" content="cdyYsDooUFOSkkYKalLggqTgkGqnAUAmYqLaTNvhtI4" />
+
+    <!-- GOOGLE ADSENSE (CHAVE DE MONETIZAÇÃO) -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4054141673537383" crossorigin="anonymous"></script>
+
     <!-- FONTES, PWA E ESTILO -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600;900&display=swap" rel="stylesheet">
     <link rel="manifest" href="manifest.json">
@@ -29,7 +35,6 @@
         }
         section { box-shadow: 0 0 15px rgba(255,106,0,0.1); }
         h2 { border-left: 5px solid #ff6a00; padding-left: 15px; text-transform: uppercase; }
-        
         .card-glass { 
             background: rgba(255, 255, 255, 0.03); 
             backdrop-filter: blur(15px); 
@@ -43,8 +48,8 @@
         .card-glass:hover { border-color: rgba(255, 106, 0, 0.5); transform: translateY(-8px); }
         .guide-text { font-size: 11px; line-height: 1.6; color: #999; margin-bottom: 20px; font-style: italic; }
         .guide-text b { color: #ff6a00; font-weight: 600; }
-        input::-webkit-inner-spin-button, select { -webkit-appearance: none; appearance: none; }
-        input, select { -webkit-user-select: text; user-select: text; }
+        input, select { -webkit-user-select: text; user-select: text; outline: none; }
+        input::-webkit-inner-spin-button { -webkit-appearance: none; }
     </style>
 </head>
 <body oncontextmenu="return false;">
@@ -55,10 +60,10 @@
             <span class="bg-orange-600 text-white text-[10px] font-black px-4 py-1.5 rounded-full uppercase tracking-[4px] mb-8 inline-block animate-pulse">
                 ● Inteligência de Elite • Jeovane Miguel
             </span>
-            <h1 class="text-6xl md:text-9xl font-black leading-tight uppercase tracking-tighter">
+            <h1 class="text-6xl md:text-9xl font-black leading-tight uppercase tracking-tighter italic text-left">
                 Estratégia para <br> <span class="text-orange-600">o teu sucesso.</span>
             </h1>
-            <p class="text-xl md:text-2xl text-gray-400 mt-8 max-w-2xl italic leading-relaxed font-light">
+            <p class="text-xl md:text-2xl text-gray-400 mt-8 max-w-2xl italic leading-relaxed font-light text-left">
                 Domina o teu futuro financeiro com as ferramentas de elite criadas por <br>
                 <span class="text-white border-b-2 border-orange-600 font-bold italic">Jeovane Monteiro Miguel.</span>
             </p>
@@ -75,133 +80,58 @@
     </header>
 
     <!-- SECÇÃO DE FERRAMENTAS -->
-    <section id="ferramentas" class="py-32 px-6">
+    <section id="ferramentas" class="py-32 px-6 bg-zinc-950">
         <div class="max-w-7xl mx-auto">
             <h2 class="text-gray-200 text-3xl font-black mb-20 text-left uppercase italic">Ecossistema de Inteligência</h2>
-            
             <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
-                
                 <!-- 1. GESTÃO 50-30-20 -->
                 <div class="card-glass p-10 rounded-[45px]">
                     <div>
                         <h3 class="text-xl font-black mb-2 text-orange-600 uppercase text-left italic">Gestão 50-30-20</h3>
-                        <div class="guide-text">
-                            <p><b>01. O que é:</b> Método inteligente de divisão mensal.</p>
-                            <p><b>02. Regra:</b> 50% Essencial, 30% Lazer, 20% Investimento.</p>
-                        </div>
-                        <input type="number" id="salarioInput" placeholder="Teu Salário" class="w-full bg-black/40 border border-white/5 p-5 rounded-2xl text-xl font-bold text-orange-500 focus:border-orange-600 outline-none mb-6">
+                        <div class="guide-text"><p><b>01. O que é:</b> Divisão inteligente do salário.</p></div>
+                        <input type="number" id="salarioInput" placeholder="Teu Salário" class="w-full bg-black/40 border border-white/5 p-5 rounded-2xl text-xl font-bold text-orange-500 mb-6">
                         <button onclick="calcularRenda()" class="w-full bg-orange-600 text-white py-5 rounded-2xl font-black text-[10px] uppercase tracking-[2px]">Simular</button>
                     </div>
                     <div id="resultado" class="mt-8 space-y-2 hidden font-light text-left text-xs">
-                        <div class="flex justify-between border-b border-white/5 pb-1"><span>ESSENCIAL (50%)</span><span id="res-essencial"></span></div>
-                        <div class="flex justify-between border-b border-white/5 pb-1"><span>LAZER (30%)</span><span id="res-lazer"></span></div>
-                        <div class="flex justify-between"><span>INVESTIMENTO (20%)</span><span id="res-invest"></span></div>
+                        <div class="flex justify-between border-b border-white/5 pb-1"><span>ESSENCIAL</span><span id="res-essencial" class="font-bold text-white"></span></div>
+                        <div class="flex justify-between border-b border-white/5 pb-1"><span>LAZER</span><span id="res-lazer" class="font-bold text-white"></span></div>
+                        <div class="flex justify-between"><span>INVESTIMENTO</span><span id="res-invest" class="font-bold text-white"></span></div>
                     </div>
                 </div>
-
                 <!-- 2. FUNDO DE RESERVA -->
                 <div class="card-glass p-10 rounded-[45px]">
                     <div>
                         <h3 class="text-xl font-black mb-2 text-orange-600 uppercase text-left italic">Fundo de Reserva</h3>
-                        <div class="guide-text">
-                            <p><b>01. Indispensável:</b> O teu colchão de segurança familiar.</p>
-                            <p><b>02. Meta:</b> Define o teu tempo de segurança em meses.</p>
-                        </div>
-                        <input type="number" id="despesas" placeholder="Despesas Mensais" class="w-full bg-black/40 border border-white/5 p-5 rounded-2xl text-lg font-bold mb-4 outline-none">
-                        <input type="number" id="meses" placeholder="Meses de Segurança" class="w-full bg-black/40 border border-white/5 p-5 rounded-2xl text-lg font-bold mb-6 outline-none">
-                        <button onclick="calcularReserva()" class="w-full bg-white text-black py-5 rounded-2xl font-black text-[10px] uppercase tracking-[2px]">Calcular Reserva</button>
+                        <div class="guide-text"><p><b>01. Segurança:</b> Teu colchão de proteção familiar.</p></div>
+                        <input type="number" id="despesas" placeholder="Despesas Mensais" class="w-full bg-black/40 border border-white/5 p-5 rounded-2xl mb-4 text-white">
+                        <input type="number" id="meses" placeholder="Meses de Segurança" class="w-full bg-black/40 border border-white/5 p-5 rounded-2xl mb-6 text-white">
+                        <button onclick="calcularReserva()" class="w-full bg-white text-black py-5 rounded-2xl font-black text-[10px] uppercase tracking-[2px]">Calcular</button>
                     </div>
-                    <div id="resultadoReservaBox" class="mt-8 p-8 bg-orange-600 rounded-[30px] hidden text-left italic">
-                        <div id="resultadoReserva"></div>
-                    </div>
-                </div>
-
-                <!-- 3. CONVERSOR GLOBAL -->
-                <div class="card-glass p-10 rounded-[45px]">
-                    <div>
-                        <h3 class="text-xl font-black mb-2 text-orange-600 uppercase text-left italic">Conversor Global</h3>
-                        <div class="guide-text"><p><b>01. Precisão:</b> Câmbio educativo para o teu poder de compra.</p></div>
-                        <input type="number" id="valorMoeda" placeholder="Valor" class="w-full bg-black/40 border border-white/5 p-5 rounded-2xl text-lg font-bold mb-4 outline-none">
-                        <div class="grid grid-cols-2 gap-3 mb-6">
-                            <select id="moedaOrigem" class="bg-zinc-800 p-4 rounded-xl text-[10px] font-black uppercase text-left"><option value="KZ">KZ</option><option value="USD">USD</option><option value="EUR">EUR</option><option value="BRL">BRL</option></select>
-                            <select id="moedaDestino" class="bg-zinc-800 p-4 rounded-xl text-[10px] font-black text-orange-500 uppercase text-left"><option value="USD">USD</option><option value="KZ">KZ</option><option value="EUR">EUR</option><option value="BRL">BRL</option></select>
-                        </div>
-                        <button onclick="converterMoeda()" class="w-full bg-zinc-100 text-black py-5 rounded-2xl font-black text-[10px] uppercase tracking-[2px]">Converter Agora</button>
-                    </div>
-                    <div id="boxMoeda" class="mt-8 p-6 bg-zinc-900 rounded-[30px] hidden text-center italic"><p id="resultadoMoeda" class="font-bold text-orange-500"></p></div>
-                </div>
-
-                <!-- 4. SIMULADOR ROI -->
-                <div class="card-glass p-10 rounded-[45px]">
-                    <div>
-                        <h3 class="text-xl font-black mb-2 text-orange-600 uppercase text-left italic">Estratégia ROI</h3>
-                        <div class="guide-text"><p><b>01. Visão:</b> ROI é o lucro sobre o capital investido.</p></div>
-                        <input type="number" id="capital" placeholder="Capital Inicial" class="w-full bg-black/40 border border-white/5 p-4 rounded-xl mb-3 outline-none">
-                        <input type="number" id="lucroMensal" placeholder="Lucro Mensal" class="w-full bg-black/40 border border-white/5 p-4 rounded-xl mb-3 outline-none">
-                        <input type="number" id="despesasNegocio" placeholder="Despesas" class="w-full bg-black/40 border border-white/5 p-4 rounded-xl mb-6 outline-none">
-                        <button onclick="simularNegocio()" class="w-full bg-orange-600 text-white py-5 rounded-2xl font-black text-[10px] uppercase tracking-[2px]">Simular ROI</button>
-                    </div>
-                    <div id="boxNegocio" class="mt-8 p-8 bg-zinc-900 rounded-[30px] hidden text-left leading-relaxed text-xs font-light italic">
-                        <div id="resultadoNegocio"></div>
-                    </div>
+                    <div id="resultadoReservaBox" class="mt-8 p-8 bg-orange-600 rounded-[30px] hidden text-left italic"><div id="resultadoReserva"></div></div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- FOOTER UNIFICADO COM FISCALIDADE -->
+    <!-- FOOTER UNIFICADO -->
     <footer class="py-24 px-6 border-t border-white/5 text-center bg-black leading-loose">
-        <div class="flex flex-wrap justify-center gap-8 md:gap-12 mb-16 text-[10px] font-black uppercase tracking-[3px] text-gray-500">
+        <div class="flex flex-wrap justify-center gap-8 md:gap-12 mb-16 text-[10px] font-black uppercase tracking-[4px] text-gray-500">
             <a href="sobre.html" class="hover:text-orange-500 transition">Autor</a>
             <a href="faculdade.html" class="hover:text-orange-500 transition">Faculdade</a>
-            <a href="fiscalidade.html" class="hover:text-orange-500 transition text-orange-600 font-bold italic">Fiscalidade & IVA</a>
+            <a href="fiscalidade.html" class="hover:text-orange-500 transition text-orange-600 italic">Fiscalidade</a>
             <a href="pilares.html" class="hover:text-orange-500 transition border-b border-orange-600/30">Poupança vs Investimento</a>
-            <a href="glossario.html" class="hover:text-orange-500 transition">Glossário</a>
-            <a href="juros.html" class="hover:text-orange-500 transition">Juros Compostos</a>
-            <a href="artigos.html" class="hover:text-orange-500 transition">Artigos</a>
-            <a href="poupanca.html" class="hover:text-orange-500 transition">Metas</a>
-            <a href="credito.html" class="hover:text-orange-500 transition">Crédito</a>
+            <a href="artigos.html" class="hover:text-orange-500 transition font-bold">Artigos</a>
             <a href="contato.html" class="hover:text-orange-500 transition font-black">Contato</a>
+            <a href="privacidade.html" class="hover:text-orange-500 transition text-[8px]">Privacidade</a>
         </div>
-        <p class="text-gray-800 text-[9px] uppercase tracking-[8px] font-black italic">© 2026 Economia Laranja. Criado e Blindado por Jeovane Monteiro Miguel.</p>
+        <p class="text-gray-800 text-[9px] uppercase tracking-[8px] font-black italic">© 2026 Economia Laranja. Identidade Blindada por Jeovane Monteiro Miguel.</p>
     </footer>
 
     <script>
-        /* PROTEÇÃO RÍGIDA CONTRA INSPEÇÃO E CÓPIA */
-        document.onkeydown = function(e) {
-            if(e.keyCode == 123 || (e.ctrlKey && e.shiftKey && (e.keyCode == 'I'.charCodeAt(0) || e.keyCode == 'J'.charCodeAt(0))) || (e.ctrlKey && e.keyCode == 'U'.charCodeAt(0))) {
-                return false;
-            }
-        };
-
-        /* LÓGICA DAS CALCULADORAS */
-        function calcularRenda() {
-            const s = document.getElementById('salarioInput').value;
-            if (s > 0) { document.getElementById('resultado').classList.remove('hidden'); document.getElementById('res-essencial').innerText = (s*0.5).toLocaleString() + " -"; document.getElementById('res-lazer').innerText = (s*0.3).toLocaleString() + " -"; document.getElementById('res-invest').innerText = (s*0.2).toLocaleString() + " -"; }
-        }
-        function calcularReserva() {
-            const d = parseFloat(document.getElementById("despesas").value), m = parseFloat(document.getElementById("meses").value);
-            if (d && m) { const t = d * m, p = t / 6; document.getElementById("resultadoReservaBox").classList.remove('hidden'); document.getElementById("resultadoReserva").innerHTML = `TOTAL: <span class='text-white font-bold'>${t.toLocaleString()} -</span><br>PLANO 6 MESES: <span class='text-white font-bold'>${p.toLocaleString()} /mês</span>`; }
-        }
-        function converterMoeda() {
-            var v = parseFloat(document.getElementById("valorMoeda").value), o = document.getElementById("moedaOrigem").value, d = document.getElementById("moedaDestino").value;
-            if (isNaN(v)) return;
-            var t = { KZ: 1, USD: 850, EUR: 920, BRL: 170 };
-            var r = (v * t[o]) / t[d];
-            document.getElementById("boxMoeda").classList.remove('hidden');
-            document.getElementById("resultadoMoeda").innerHTML = "CONVERTIDO: " + r.toFixed(2).toLocaleString() + " " + d;
-        }
-        function simularNegocio() {
-            var cap = parseFloat(document.getElementById("capital").value), lucM = parseFloat(document.getElementById("lucroMensal").value), des = parseFloat(document.getElementById("despesasNegocio").value);
-            if (isNaN(cap) || isNaN(lucM) || isNaN(des)) return;
-            var lucL = lucM - des;
-            if (lucL <= 0) { document.getElementById("boxNegocio").classList.remove('hidden'); document.getElementById("resultadoNegocio").innerHTML = "NEGÓCIO INVIÁVEL"; return; }
-            var mMilhao = 1000000 / lucL, roi = (lucL / cap) * 100;
-            document.getElementById("boxNegocio").classList.remove('hidden');
-            document.getElementById("resultadoNegocio").innerHTML = `LUCRO LÍQUIDO: ${lucL.toLocaleString()} -<br>ROI: ${roi.toFixed(2)}% /mês<br>ATÉ O MILHÃO: ${mMilhao.toFixed(1)} Meses`;
-        }
-
+        document.onkeydown = function(e) { if(e.keyCode == 123 || (e.ctrlKey && e.shiftKey && (e.keyCode == 'I'.charCodeAt(0) || e.keyCode == 'J'.charCodeAt(0))) || (e.ctrlKey && e.keyCode == 'U'.charCodeAt(0))) return false; };
+        function calcularRenda() { const s = document.getElementById('salarioInput').value; if (s > 0) { document.getElementById('resultado').classList.remove('hidden'); document.getElementById('res-essencial').innerText = (s*0.5).toLocaleString() + " -"; document.getElementById('res-lazer').innerText = (s*0.3).toLocaleString() + " -"; document.getElementById('res-invest').innerText = (s*0.2).toLocaleString() + " -"; } }
+        function calcularReserva() { const d = parseFloat(document.getElementById("despesas").value), m = parseFloat(document.getElementById("meses").value); if (d && m) { const t = d * m, p = t / 6; document.getElementById("resultadoReservaBox").classList.remove('hidden'); document.getElementById("resultadoReserva").innerHTML = `TOTAL: <span class='text-white font-bold'>${t.toLocaleString()} -</span><br>PLANO 6 MESES: <span class='text-white font-bold'>${p.toLocaleString()} /mês</span>`; } }
         if ('serviceWorker' in navigator) { navigator.serviceWorker.register('sw.js'); }
     </script>
 </body>
-        </html>
+</html>
